@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 Future<Weather> fetchWeather() async {
   final response = await http.get(Uri.parse(
-      'https://api.openweathermap.org/data/2.5/weather?lat=-6.905977&lon=107.613144&appid=8a62276ea2501d4b7dcf42ebce66cede&units=metric'));
+      'https://api.openweathermap.org/data/2.5/weather?lat=-6.905977&lon=107.613144&appid={{APPID}}&units=metric'));
   if (response.statusCode == 200) {
     return Weather.formJson(jsonDecode(response.body));
   } else {
